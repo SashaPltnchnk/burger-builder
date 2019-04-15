@@ -34,7 +34,6 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 loading: false
             };
-        default:
         case actionTypes.FETCH_ORDERS_START:
             return {
                 ...state,
@@ -51,6 +50,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 loading: false
             };
+        default:
             return state;
     }
 };

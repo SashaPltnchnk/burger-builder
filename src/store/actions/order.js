@@ -42,7 +42,7 @@ export const purchaseInit = () => {
     };
 };
 
-export const fetchOrdersSucces = (orders) => {
+export const fetchOrdersSuccess = (orders) => {
     return {
         type: actionTypes.FETCH_ORDERS_SUCCESS,
         orders: orders
@@ -63,7 +63,7 @@ export const fetchOrdersStart = () => {
 };
 
 export const fetchOrders = () => {
-    return dispatch=> {
+    return dispatch => {
         dispatch(fetchOrdersStart());
         axios.get('/orders.json')
         .then(res => {
@@ -74,7 +74,7 @@ export const fetchOrders = () => {
                     id: key
                 });
             }
-            dispatch(fetchOrdersSucces(fetchedOrders));
+            dispatch(fetchOrdersSuccess(fetchedOrders));
         })
         .catch(err => {
             dispatch(fetchOrdersFail(err));
